@@ -72,6 +72,10 @@ export default function Home(props) {
         navigation.navigate('NewQuote', {quote: item, title:"Edit Quote"})
     };
 
+    const aboutUs = ()=>{
+        navigation.navigate('AboutUs', {title:"About Us"})
+    }
+
     //==================================================================================================
 
     //6 - DELETE QUOTE
@@ -124,6 +128,11 @@ export default function Home(props) {
                                     onPress={() => navigation.navigate('NewQuote', {title:"New Quote"})}>
                     <Text style={{fontSize: 25, color: 'white'}}>+</Text>
                 </TouchableHighlight>
+                <TouchableHighlight style={styles.floatingButton1}
+                                    underlayColor='#ff7043'
+                                    onPress={() => navigation.navigate('AboutUs', {title:"About Us"})}>
+                    <Text style={{fontSize: 25, color: 'white'}}>!</Text>
+                </TouchableHighlight>
             </SafeAreaView>
         );
     }
@@ -154,6 +163,25 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 60,
         right: 15,
+        shadowColor: "#000000",
+        shadowOpacity: 0.5,
+        shadowRadius: 2,
+        shadowOffset: {
+            height: 1,
+            width: 0
+        }
+    },
+    floatingButton1:{
+        backgroundColor: '#6B9EFA',
+        borderColor: '#6B9EFA',
+        height: 55,
+        width: 55,
+        borderRadius: 55 / 2,
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+        bottom: 60,
+        left: 15,
         shadowColor: "#000000",
         shadowOpacity: 0.5,
         shadowRadius: 2,

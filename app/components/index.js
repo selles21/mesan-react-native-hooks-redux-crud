@@ -4,18 +4,25 @@ import { createStackNavigator } from 'react-navigation-stack';
 import LoadingScreen from './LoadingScreen'
 import HomeScreen from './Home'
 import NewQuoteScreen from './NewQuote'
+import AboutUs from './Aboutus'
 
 const AppStack = createStackNavigator({
-    Home:{
+    Home: {
         screen: HomeScreen,
         navigationOptions: ({ navigation }) => ({
             title: `Home`,
         }),
     },
-    NewQuote:{
+    NewQuote: {
         screen: NewQuoteScreen,
         navigationOptions: ({ navigation }) => ({
             title: `New Quote`,
+        }),
+    },
+    AboutUs: {
+        screen: AboutUs,
+        navigationOptions: ({ navigation }) => ({
+            title: `About Us`
         }),
     }
 });
@@ -25,7 +32,7 @@ const RoutesStack = createSwitchNavigator(
         Loading: LoadingScreen,
         App: AppStack
     },
-    {initialRouteName: 'Loading'}
+    { initialRouteName: 'Loading' }
 );
 
 const Router = createAppContainer(RoutesStack);
